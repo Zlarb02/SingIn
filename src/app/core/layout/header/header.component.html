@@ -1,0 +1,29 @@
+<header>
+    <nav>
+        <a class="navbar-brand" [routerLink]="['/']"><img src="../../../assets/images/singin-logo.png" alt="Logo"></a>
+        <div class="rawncol">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/catalog']" (click)="resetSearch()">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/songs']">Mes Zics</a>
+                </li>
+            </ul>
+            <form class="search-form">
+                <div class="input-group">
+                    <input class="form-control" class="form-control me-2" type="search" placeholder="Chercher"
+                        aria-label="Search" [(ngModel)]="searchInput" name="searchInput" (ngModelChange)="search()">
+                </div>
+            </form>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link"><img src="https://picsum.photos/100" alt="Avatar" class="rounded-circle"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary" [routerLink]="['/connection']">Connexion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,64 @@
+$primary-color: #070A52;
+$secondary-color: #D21312;
+$tertiary-color: #ED2B2A;
+$quaternary-color: #F15A59;
+
+$primary-bis-color: #00235B;
+$secondary-bis-color: #E21818;
+$tertiary-bis-color: #FFDD83;
+$quaternary-bis-color: #98DFD6;
+.main{
+  margin-top:20vh;
+  height: 80vh;
+  overflow-y: scroll;
+}
+.card{
+  background-color: #F15A59;
+  display: flex;
+  align-items:center;
+  justify-content:flex-start;
+  border: none;
+}
+  ul{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 0;
+  }
+  li {
+    margin: 1vw ;
+    padding: 1vw;
+  }
+  
+  .card-body {
+    border-radius: 25px;
+    background-color: #98DFD6;
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    justify-content:space-evenly;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color: #FFDD83;
+     }
+  
+  button {
+    background-color: #00235B;
+    color: #98DFD6;
+    padding: 1vw 3vw;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #00235B;
+    color:#FFDD83
+  }
+  
