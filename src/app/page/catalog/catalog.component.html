@@ -1,41 +1,19 @@
 <div class="main row justify-content-center col">
-    <div *ngIf="!searchInput">
-        <ul>
-            <li *ngFor="let song of songs">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="infos">
-                            <h5 class="card-title">{{ song.name }}</h5>
-                            <h6 class="card-title">{{ song.artist }}</h6>
-                            <h6 class="card-title">{{ song.tempo }}</h6>
-                        </div>
-                        <audio controls>
-                            <source src="{{ song.mp3Url }}" type="audio/mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <button class="btn btn-primary" type="button">Écrire un flow</button>
-                    </div>
+    <ul>
+        <li *ngFor="let song of filteredSongs" class="card">
+            <div class="card-body">
+                <div class="infos">
+                    <h5 class="card-title">{{ song.name }}</h5>
+                    <h6 class="card-title">{{ song.artist }}</h6>
                 </div>
-            </li>
-        </ul>
-    </div>
-    <div *ngIf="searchInput">
-        <ul>
-            <li *ngFor="let song of filteredSongs" class="card">
-                <div class="card-body">
-                    <div class="infos">
-                        <h5 class="card-title">{{ song.name }}</h5>
-                        <h6 class="card-title">{{ song.artist }}</h6>
-                    </div>
-                    <audio controls>
-                        <source src="{{ song.mp3Url }}" type="audio/mp3">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <button class="btn btn-primary" type="button">Écrire un flow</button>
-                </div>
-            </li>
-        </ul>
-        <p *ngIf="searchInput">Recherche effectuée !</p>
-        <button class="btn btn-primary" type="button" (click)="resetSearch()">Explorer toutes les zics</button>
-    </div>
+                <audio controls>
+                    <source src="{{ song.mp3Url }}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <a routerLink="flow"><button class="btn btn-primary" type="button">Écrire un flow</button></a>
+            </div>
+        </li>
+    </ul>
+    <p *ngIf="searchInput">Recherche effectuée !</p>
+    <button class="btn btn-primary" type="button" (click)="resetSearch()">Explorer toutes les zics</button>
 </div>

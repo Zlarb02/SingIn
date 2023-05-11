@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -15,8 +15,5 @@ export class HeaderComponent {
   public search() {
     this.searchService.setSearchInput(this.searchInput);
     this.searchInput = ''
-  }
-  public resetSearch() {
-    this.searchService.setSearchInput('');
   }
 }

@@ -12,8 +12,8 @@ import { LayoutModule } from 'src/app/core/layout/layout.module';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule
   ]
 })
 export class CatalogModule { }

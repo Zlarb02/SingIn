@@ -5,6 +5,9 @@ import { NotFoundComponent } from './core/layout/not-found/not-found.component';
 import { CatalogComponent } from './page/catalog/catalog.component';
 import { ConnectionComponent } from './page/connection/connection.component';
 import { MySongsComponent } from './page/my-songs/my-songs.component';
+import { PlayersComponent } from './page/players/players.component';
+import { GridComponent } from './page/players/grid/grid.component';
+import { LineComponent } from './page/players/line/line.component';
 
 const routes: Routes = [
   {
@@ -27,6 +30,23 @@ const routes: Routes = [
   {
     path: 'songs',
     component: MySongsComponent
+  },
+  {
+    path: 'flow',
+    children: [
+      {
+        path: '',
+        component: PlayersComponent
+      },
+      {
+        path: 'grid',
+        component: GridComponent
+      },
+      {
+        path: 'line',
+        component: LineComponent
+      }
+    ]
   },
   /*   {
       path: 'book',

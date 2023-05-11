@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SearchService } from 'src/app/core/services/search.service';
 
@@ -140,7 +140,7 @@ export class CatalogComponent {
   public searchInput: string = '';
   private searchInputSubscription!: Subscription;
 
-  filteredSongs: Song[] = [];
+  filteredSongs: Song[] = this.songs;
 
   ngOnInit() {
     this.searchInputSubscription = this.searchService.getSearchInputObservable().subscribe((value: string) => {
