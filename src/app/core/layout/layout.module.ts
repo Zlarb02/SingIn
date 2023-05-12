@@ -4,13 +4,15 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RouterModule
   ],
   exports: [
+    FooterComponent,
     HeaderComponent,
     NotFoundComponent
   ]

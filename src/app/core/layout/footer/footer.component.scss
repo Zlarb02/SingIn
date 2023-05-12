@@ -1,0 +1,51 @@
+.footer {
+    background-color: #00235B;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  
+    &.hidden {
+      transform: translateY(calc(100% - 50px));
+    }
+  
+    .footer-content {
+      padding: 20px;
+      height: 15vh;
+    }
+  
+    .toggle-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      cursor: pointer;
+      transform: rotate(180deg);
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        background-color: #070A52;
+      }
+  
+      .arrow-icon {
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 5px 5px;
+        border-color: transparent transparent #555 transparent;
+        transform: rotate(-180deg);
+        transition: transform 0.3s ease-in-out;
+  
+        &.open {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+  

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogComponent } from './catalog.component';
-import { FormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/app/core/layout/layout.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +13,7 @@ import { LayoutModule } from 'src/app/core/layout/layout.module';
   imports: [
     CommonModule,
     LayoutModule,
-    FormsModule
+    RouterModule
   ]
 })
 export class CatalogModule { }

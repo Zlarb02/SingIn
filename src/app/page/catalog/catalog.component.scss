@@ -8,7 +8,6 @@ $secondary-bis-color: #E21818;
 $tertiary-bis-color: #FFDD83;
 $quaternary-bis-color: #98DFD6;
 .main{
-  margin-top:20vh;
   height: 80vh;
   overflow-y: scroll;
 }
@@ -50,7 +49,7 @@ $quaternary-bis-color: #98DFD6;
   
   button {
     background-color: #00235B;
-    color: #98DFD6;
+    color: #FFDD83;
     padding: 1vw 3vw;
     border: none;
     border-radius: 25px;
@@ -59,6 +58,6 @@ $quaternary-bis-color: #98DFD6;
   
   button:hover {
     background-color: #00235B;
-    color:#FFDD83
+    color:#ED2B2A
   }
   
