@@ -9,10 +9,15 @@ import { PlayService } from '../services/play.service';
 export class FooterComponent implements OnInit {
   isFooterHidden = true;
   currentSongUrl!: string;
+  currentSongName!: string;
+  currentSongArtist!: string;
+  currentSongTempo!: string;
 
   @ViewChild('audioPlayer', { static: true }) audioPlayer!: ElementRef;
 
   constructor(private playService: PlayService) { }
+
+  //toggle 
 
   toggleFooter() {
     this.isFooterHidden = !this.isFooterHidden;
@@ -32,8 +37,13 @@ export class FooterComponent implements OnInit {
     };
   }
 
+  //get song
+
   ngOnInit(): void {
-    this.playService.getCurrentSongUrl().subscribe((songInfo) => {
+    this.playService.getCurrentSong().subscribe((songInfo) => {
+      this.currentSongName = songInfo.name;
+      this.currentSongArtist = songInfo.artist;
+      this.currentSongTempo = songInfo.tempo;
       this.currentSongUrl = songInfo.url;
       this.isFooterHidden = songInfo.isFooterHidden;
       this.audioPlayer.nativeElement.src = this.currentSongUrl;

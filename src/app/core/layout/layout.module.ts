@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { MetronomeComponent } from './metronome/metronome.component';
 
 
 
@@ -12,7 +13,8 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    MetronomeComponent,
   ],
   imports: [
     CommonModule,

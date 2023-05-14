@@ -1,0 +1,63 @@
+.metronome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .play-button {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+    }
+
+    .tempo-control,
+    .beats-control {
+      display: flex;
+      flex-direction: column;
+      margin-right: 1rem;
+
+      label {
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        width: 10rem;
+      }
+    }
+  }
+
+  .visuals {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .beat-indicators {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .beat-indicator {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin-right: 1rem;
+
+        &.active {
+          background-color: #333;
+        }
+      }
+    }
+  }
+}

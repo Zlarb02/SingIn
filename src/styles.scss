@@ -15,3 +15,11 @@ html, body {
 li {
     list-style: none;
 }
+
+a{ 
+    text-decoration: none;
+    color: lightgrey;
+}
+a:hover{
+    color: grey;
+}

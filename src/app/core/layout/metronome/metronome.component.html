@@ -1,0 +1,41 @@
+<div class="metronome">
+    <h1 class="title">Métronome</h1>
+    <div class="tempo-control">
+        <label for="tempo">Tempo: {{ tempo }} BPM</label>
+        <input type="range" id="tempo" min="20" max="300" [(ngModel)]="tempo" (input)="setTempo(tempo)">
+        <input type="number" id="tempo-input" min="20" max="300" [(ngModel)]="tempo" (input)="setTempo(tempo)">
+        <button class="tap-button" (click)="tapTempo()">Tap</button>
+    </div>
+    <div class="controls">
+        <button class="play-button" (click)="playMetronome()">{{ isPlaying ? 'Stop' : 'Play' }}</button>
+        <div class="tempo-control">
+            <label for="tempo">Tempo: {{ tempo }} BPM</label>
+            <input type="range" id="tempo" min="20" max="300" [(ngModel)]="tempo" (input)="setTempo(tempo)">
+            <input type="number" id="tempo-input" min="20" max="300" [(ngModel)]="tempo" (input)="setTempo(tempo)">
+        </div>
+        <div class="beats-control">
+            <label for="beats">Temps par mesure: {{ beatsPerMeasure }}</label>
+            <input type="range" id="beats" min="1" max="12" [(ngModel)]="beatsPerMeasure"
+                (input)="setBeatsPerMeasure(beatsPerMeasure)">
+        </div>
+        <div class="volume-control">
+            <label for="volume">Volume: {{ volume }}%</label>
+            <input type="range" id="volume" min="0" max="100" [(ngModel)]="volume" (input)="setVolume(volume)">
+        </div>
+        <div style="width:15px"></div>
+        <div class="waveform-control">
+            <label for="waveform">Forme d'onde:</label>
+            <div style="width:5px"></div>
+            <select id="waveform" [(ngModel)]="currentWaveform" (change)="setWaveform(currentWaveform)">
+                <option *ngFor="let waveform of waveforms" [value]="waveform">{{ waveform }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="visuals">
+        <div class="beat-indicators">
+            {{ currentBeat + 1 }}
+            <div style="width:10px"></div>
+            <div *ngFor="let beat of beats" class="beat-indicator" [class.active]="beat === currentBeat"></div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 .footer {
     background-color: #00235B;
+    color: white;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -14,8 +15,10 @@
     }
   
     .footer-content {
+      display: flex;
       padding: 20px;
-      height: 15vh;
+      height: 30vh;
+      flex-direction: row;
     }
   
     .toggle-arrow {
@@ -49,3 +52,8 @@
     }
   }
   
+
+  audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color: #FFDD83;
+     }

@@ -18,6 +18,7 @@ interface Song {
 })
 
 export class CatalogComponent {
+  selectedSong!: Song;
 
   constructor(
     private searchService: SearchService,
@@ -169,7 +170,7 @@ export class CatalogComponent {
   }
 
   //play song
-  public playSong(songUrl: string) {
-    this.playService.playSong(songUrl)
+  public playSong(songUrl: string, songName: string, songArtist: string, songTempo: string) {
+    this.playService.playSong(songUrl, songName, songArtist, songTempo)
   }
 }

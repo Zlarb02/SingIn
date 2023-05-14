@@ -3,11 +3,17 @@
         <span [ngClass]="arrowIconClasses"></span>
     </div>
     <div class="footer-content">
+        <app-metronome></app-metronome>
+        <div style="width:30px"></div>
         <section class="player">
             <div class="infos">
-                <h5 class="card-title">song name</h5>
-                <h6 class="card-title">song artist</h6>
+                <h5 class="card-title">{{currentSongName}}</h5>
+                <h6 class="card-title">{{currentSongArtist}}</h6>
+                <p class="card-title">{{currentSongTempo}}</p>
             </div>
+            <a routerLink="catalog" *ngIf="currentSongUrl == ''">
+                <h3> Please choose a song to play </h3>
+            </a>
             <audio #audioPlayer controls autoplay>
                 <source [attr.src]="currentSongUrl" type="audio/mp3">
                 Your browser does not support the audio element.
