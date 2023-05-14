@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SearchService } from 'src/app/core/services/search.service';
+import { SearchService } from '../../core/layout/services/search.service';
+import { PlayService } from 'src/app/core/layout/services/play.service';
 
 interface Song {
   name: string;
@@ -18,7 +19,10 @@ interface Song {
 
 export class CatalogComponent {
 
-  constructor(private searchService: SearchService) { }
+  constructor(
+    private searchService: SearchService,
+    private playService: PlayService
+  ) { }
 
   //db songs
   songs: Song[] = [
@@ -164,5 +168,8 @@ export class CatalogComponent {
     });
   }
 
-
+  //play song
+  public playSong(songUrl: string) {
+    this.playService.playSong(songUrl)
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { PlayService } from '../services/play.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   isFooterHidden = true;
+  currentSongUrl!: string;
 
-  constructor() { }
+  @ViewChild('audioPlayer', { static: true }) audioPlayer!: ElementRef;
 
-  ngOnInit(): void {
-  }
+  constructor(private playService: PlayService) { }
 
   toggleFooter() {
     this.isFooterHidden = !this.isFooterHidden;
@@ -30,4 +31,13 @@ export class FooterComponent implements OnInit {
       'hidden': this.isFooterHidden
     };
   }
+
+  ngOnInit(): void {
+    this.playService.getCurrentSongUrl().subscribe((songInfo) => {
+      this.currentSongUrl = songInfo.url;
+      this.isFooterHidden = songInfo.isFooterHidden;
+      this.audioPlayer.nativeElement.src = this.currentSongUrl;
+    });
+  }
+
 }

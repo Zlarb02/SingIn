@@ -10,6 +10,7 @@
                     <source src="{{ song.mp3Url }}" type="audio/mp3">
                     Your browser does not support the audio element.
                 </audio>
+                <button class="btn btn-primary" type="button" (click)="playSong( song.mp3Url)">PLAY</button>
                 <a routerLink="/flow"><button class="btn btn-primary" type="button">Écrire un flow</button></a>
             </div>
         </li>

@@ -3,6 +3,15 @@
         <span [ngClass]="arrowIconClasses"></span>
     </div>
     <div class="footer-content">
-        <p>footer</p>
+        <section class="player">
+            <div class="infos">
+                <h5 class="card-title">song name</h5>
+                <h6 class="card-title">song artist</h6>
+            </div>
+            <audio #audioPlayer controls autoplay>
+                <source [attr.src]="currentSongUrl" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
     </div>
 </footer>
